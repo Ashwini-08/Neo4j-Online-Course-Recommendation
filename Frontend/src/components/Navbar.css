@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Align all items to the right */
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links a,
+.logout-button {
+  text-decoration: none;
+  color: white;
+  font-size: 16px; /* Uniform font size */
+  font-weight: normal; /* Ensure uniform font weight */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add hover animation */
+  background-color: transparent; /* Default background to match navbar */
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-links a:hover,
+.logout-button:hover {
+  background-color: #444; /* Hover effect background color */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.logout-button {
+  display: inline-block; /* Makes the button behave like links */
+  font-family: inherit; /* Ensure consistent font across links and button */
+}
