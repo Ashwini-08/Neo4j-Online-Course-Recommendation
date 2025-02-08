@@ -20,11 +20,7 @@ export default function SignUp() {
       formData.role // Added role validation
     ) {
       try {
-<<<<<<< HEAD
         const response = await fetch("http://localhost:3001/api/auth/signup", {
-=======
-        const response = await fetch("http://34.145.27.91:3001/api/auth/signup", {
->>>>>>> b51ad8d915adff84d8a5ef1ce2b3fbfe0407bc3f
           method: "POST",
           headers: {
             "Content-Type": "application/json",
