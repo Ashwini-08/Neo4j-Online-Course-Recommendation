@@ -1,7 +1,7 @@
 const { saveUser, findUserByEmail } = require("../models/userModel");
-const { uploadImageToS3 } = require('../config/aws');
+// const { uploadImageToS3 } = require('../config/aws');
 const { updateUserProfilePicture } = require('../config/neo4j');
-const { getImageFromS3 } = require('../config/aws'); // Adjust path based on file structure
+// const { getImageFromS3 } = require('../config/aws'); // Adjust path based on file structure
 
 
 
@@ -78,44 +78,44 @@ exports.updateUserProfile = async (req, res) => {
   }
 };
 
-exports.getProfilePicture = async (req, res) => {
-  try {
-      const { email } = req.user; // Extract authenticated user email from the request
+// exports.getProfilePicture = async (req, res) => {
+//   try {
+//       const { email } = req.user; // Extract authenticated user email from the request
 
-      if (!email) {
-          return res.status(400).json({ status: 'error', message: 'Email is required' });
-      }
+//       if (!email) {
+//           return res.status(400).json({ status: 'error', message: 'Email is required' });
+//       }
 
-      const user = await findUserByEmail(email);
-      if (!user) {
-          return res.status(404).json({ status: 'error', message: 'User not found' });
-      }
+//       const user = await findUserByEmail(email);
+//       if (!user) {
+//           return res.status(404).json({ status: 'error', message: 'User not found' });
+//       }
 
-      // Get the image URL (s3://profile-image-bucket-2401/Photo.png) from the user data
-      const imageUrl = user.profilePicture; // Assuming the URL is stored as 'profilePicture'
+//       // Get the image URL (s3://profile-image-bucket-2401/Photo.png) from the user data
+//       const imageUrl = user.profilePicture; // Assuming the URL is stored as 'profilePicture'
 
-      if (!imageUrl) {
-          return res.status(404).json({ status: 'error', message: 'Profile picture not found' });
-      }
+//       if (!imageUrl) {
+//           return res.status(404).json({ status: 'error', message: 'Profile picture not found' });
+//       }
 
-      // Extract the Key from the full URL (remove the 's3://' prefix)
-      const imageKey = imageUrl.replace('s3://profile-image-bucket-2401/', '');
+//       // Extract the Key from the full URL (remove the 's3://' prefix)
+//       const imageKey = imageUrl.replace('s3://profile-image-bucket-2401/', '');
 
-      // Get the signed URL for the image from S3
-      const imageSignedUrl = await getImageFromS3(imageKey);
+//       // Get the signed URL for the image from S3
+//       const imageSignedUrl = await getImageFromS3(imageKey);
 
-      // Return the image URL
-      res.status(200).json({
-          status: 'success',
-          message: 'Profile picture retrieved successfully',
-          profilePicture: imageSignedUrl,
-      });
-  } catch (error) {
-      console.error('Error retrieving profile picture:', error);
-      res.status(500).json({
-          status: 'error',
-          message: 'Failed to retrieve profile picture',
-      });
-  }
-};
+//       // Return the image URL
+//       res.status(200).json({
+//           status: 'success',
+//           message: 'Profile picture retrieved successfully',
+//           profilePicture: imageSignedUrl,
+//       });
+//   } catch (error) {
+//       console.error('Error retrieving profile picture:', error);
+//       res.status(500).json({
+//           status: 'error',
+//           message: 'Failed to retrieve profile picture',
+//       });
+//   }
+// };
 

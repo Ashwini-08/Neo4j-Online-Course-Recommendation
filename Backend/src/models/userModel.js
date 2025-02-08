@@ -2,8 +2,8 @@ const neo4j = require('neo4j-driver');
 
 // Neo4j driver setup
 const driver = neo4j.driver(
-  'neo4j+s://a2764099.databases.neo4j.io', // Use the appropriate URI
-  neo4j.auth.basic('neo4j', 'KMNBLaQUxja-ogjaIcGkZR82gVzmdxvniJN9DIUCUFk') // Your Neo4j connection credentials
+  'neo4j+s://d07f6073.databases.neo4j.io', // Use the appropriate URI
+  neo4j.auth.basic('neo4j', 'SDNucqzMzFHsvhWCbQaAI06jeEIwTTzXkVaauIEqxy4'),
 );
 
 // Find user by email (node label-agnostic)

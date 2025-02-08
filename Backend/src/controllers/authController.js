@@ -7,8 +7,8 @@ const { use } = require('../routes/authRoutes');
 const connectionUrl = 'neo4j+s://a2764099.databases.neo4j.io'; // Replace with actual connection URL
 console.log("Connecting to:", connectionUrl);
 const driver = neo4j.driver(
-    'neo4j+s://a2764099.databases.neo4j.io', // Use the appropriate URI
-    neo4j.auth.basic('neo4j', 'KMNBLaQUxja-ogjaIcGkZR82gVzmdxvniJN9DIUCUFk'),
+    'neo4j+s://d07f6073.databases.neo4j.io', // Use the appropriate URI
+    neo4j.auth.basic('neo4j', 'SDNucqzMzFHsvhWCbQaAI06jeEIwTTzXkVaauIEqxy4'),
   );
   
   
