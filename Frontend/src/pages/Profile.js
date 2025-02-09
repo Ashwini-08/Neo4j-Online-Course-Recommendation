@@ -51,7 +51,7 @@ const Profile = () => {
   const handleFetchProfileDetails = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://35.227.148.200:3001/api/users/profile", {
+      const res = await fetch("http://localhost:3001/api/users/profile", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Profile = () => {
   const fetchProfilePicture = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://35.227.148.200:3001/api/users/profile-picture", {
+      const res = await fetch("http://localhost:3001/api/users/profile-picture", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -133,7 +133,7 @@ const Profile = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const res = await fetch("http://35.227.148.200:3001/api/users/upload-profile-picture", {
+      const res = await fetch("http://localhost:3001/api/users/upload-profile-picture", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -190,7 +190,7 @@ const Profile = () => {
         profilePicture: formData.profilePicture, // Profile picture URL is saved as part of the preferences
       };
 
-      const res = await fetch("http://35.227.148.200:3001/api/users/profile", {
+      const res = await fetch("http://localhost:3001/api/users/profile", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -21,7 +21,7 @@ const Home = () => {
   const fetchEnrolledCourses = async () => {
     try {
       const token = localStorage.getItem('authToken'); // Get the auth token
-      const res = await fetch(`http://34.145.27.91:3001/api/courses/enrolledCourses`, {
+      const res = await fetch(`http://localhost:3001/api/courses/enrolledCourses`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const Home = () => {
   const fetchCompletedCourses = async () => {
     try {
       const token = localStorage.getItem('authToken'); // Get the auth token
-      const res = await fetch(`http://34.145.27.91:3001/api/courses/completedCourses`, {
+      const res = await fetch(`http://localhost:3001/api/courses/completedCourses`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const Home = () => {
   const fetchRecommendedCourses = async () => {
     try {
       const token = localStorage.getItem('authToken'); // Get the auth token
-      const res = await fetch(`http://34.145.27.91:3001/api/courses/recommendCourses`, {
+      const res = await fetch(`http://localhost:3001/api/courses/recommendCourses`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

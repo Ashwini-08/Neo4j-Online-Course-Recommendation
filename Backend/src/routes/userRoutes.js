@@ -3,7 +3,7 @@ const router = express.Router();
 const protect = require('../middlewares/authMiddleware');
 const { getUserProfile } = require('../controllers/userController');
 const { updateUserProfile } = require("../controllers/userController");
-const { upload } = require('../middlewares/uploadMiddleware');
+// const { upload } = require('../middlewares/uploadMiddleware');
 // const { getProfilePicture } = require('../controllers/userController');
 
 // Protect the profile route with the `protect` middleware

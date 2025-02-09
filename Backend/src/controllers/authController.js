@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const { createUser, findUserByEmail, updateUser } = require('../models/userModel');
 const neo4j = require('neo4j-driver'); // Ensure you have the Neo4j driver installed
 const { use } = require('../routes/authRoutes');
-const connectionUrl = 'neo4j+s://a2764099.databases.neo4j.io'; // Replace with actual connection URL
+const connectionUrl = 'neo4j+s://d07f6073.databases.neo4j.io'; // Replace with actual connection URL
 console.log("Connecting to:", connectionUrl);
 const driver = neo4j.driver(
     'neo4j+s://d07f6073.databases.neo4j.io', // Use the appropriate URI

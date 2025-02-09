@@ -30,8 +30,7 @@ exports.getUserProfile = async (req, res) => {
                 age: user.age,
                 department: user.Department,
                 preferredTopic: user.Topic,
-                role: user.role,
-                profilePicture: user.profilePicture, // Include profile picture if stored
+                role: user.role, // Include profile picture if stored
             },
         });
     } catch (error) {

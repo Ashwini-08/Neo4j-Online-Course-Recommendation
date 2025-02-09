@@ -152,10 +152,10 @@ exports.getRecommendation = async (email) => {
     const session = driver.session(); // Create a new Neo4j session
     try {
         const result = await session.run(
-            `MATCH (Student:Student {email: $email})-[:ENROLLED_IN|:COMPLETED]->(c:Course)
-             MATCH (other:Student)-[:ENROLLED_IN|:COMPLETED]->(recommended:Course)
+            `MATCH (Student:Student {email: $email})-[:ENROLLEDIN|COMPLETED_IN]->(c:Course)
+             MATCH (other:Student)-[:ENROLLEDIN|COMPLETED_IN]->(recommended:Course)
              WHERE other <> Student  // Ensure we are not recommending courses already taken by the student
-             AND NOT (Student)-[:ENROLLED_IN|:COMPLETED]->(recommended)  // Filter out courses already enrolled or completed by the student
+             AND NOT (Student)-[:ENROLLEDIN|COMPLETED_IN]->(recommended)  // Filter out courses already enrolled or completed by the student
              RETURN DISTINCT recommended
              LIMIT 5`, 
             { email } // Pass email securely as a parameter
