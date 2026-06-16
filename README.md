@@ -4,6 +4,27 @@
 
 A web-based application for recommending online courses, featuring a **Frontend** built with **React** and a **Backend** built with **Node.js**.
 
+## Architecture
+
+The Online Course Recommendation System leverages a graph-based approach to model relationships between users, courses, skills, and learning pathways. Neo4j and Cypher queries are used to generate personalized recommendations by traversing interconnected entities and identifying relevant courses based on user interests and prerequisite structures.
+
+## Features
+
+- Personalized course recommendations using Neo4j graph traversal
+- Course relationship modeling with Neo4j and Cypher
+- Interactive React frontend for browsing recommendations
+- Node.js backend exposing recommendation APIs
+- Cloud-hosted deployment for end-to-end accessibility
+- Integration with AWS S3 for asset management
+
+## Tech Stack
+
+- Frontend: React, JavaScript
+- Backend: Node.js, Express.js
+- Database: Neo4j, Cypher
+- Cloud: Google Cloud VM, AWS S3
+- Version Control: Git, GitHub
+
 ## Prerequisites
 
 - Visual Studio Code (VS Code)
