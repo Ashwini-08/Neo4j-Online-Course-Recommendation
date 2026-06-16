@@ -17,6 +17,13 @@ The Online Course Recommendation System leverages a graph-based approach to mode
 - Cloud-hosted deployment for end-to-end accessibility
 - Integration with AWS S3 for asset management
 
+## My Contributions
+
+- Designed and implemented graph-based recommendation logic using Neo4j and Cypher.
+- Modeled relationships between courses, skills, and prerequisites to support personalized learning paths.
+- Developed backend components for generating and serving recommendations.
+- Supported frontend integration, testing, and deployment of the end-to-end application.
+
 ## Tech Stack
 
 - Frontend: React, JavaScript
